@@ -1,0 +1,39 @@
+from class_expenditures import CreateNewExpenditure
+cne = CreateNewExpenditure
+
+expenditures_db ={
+    "df": {
+        "3_2024": {
+            "take_home": 2388.33,
+            "spending": [
+                cne("1", "Kt", 15.00, 1, ["owed", "transfer", "kt"]),
+                cne("2", "Tesco Kt", 20.00, 2, ["food", "kt", "transfer"]),
+                cne("3", "AWS", 0.03, 3, ["course", "aws", "learn"]),
+                cne("4", "Cash machine", 40.00, 12, ["take_away", "cash_withdrawal"]),
+                cne("5", "Sainsbury's", 40.00, 13, ["fuel", "car"]),
+                cne("6", "Tesco Kt", 20.00, 15, ["food", "kt", "transfer"]),
+                cne("7", "Tesco Kt", 40.00, 15, ["food", "kt", "transfer"]),
+                cne("8", "Cash machine", 30.00, 19, ["take_away", "cash_withdrawal"]),
+                cne("9", "Farm foods", 47.93, 20, ["food"]),
+                cne("10", "Audible", 0.99, 24, ["e_book"]),
+                cne("11", "Funky Pigeon", 7.29, 27, ["event_card"]),
+                cne("12", "Taco Bell", 19.37, 27, ["take_away"]),
+                cne("13", "Simply Chiro", 35.00, 27, ["chiro"]),
+                cne("13", "You tube film", 3.49, 31, ["entertainment"]),
+                cne("14", "Tesco Express", 4.00, 31, ["store", "junk_food"]),
+            ],
+        },
+        "4_2024": {
+            "take_home": 2389.95,
+            "spending": [
+                cne("1", "Cash", 30.00, 2, ["takeaway", "cash_withdrawal"]),
+                cne("2", "Tesco Express", 6.75, 4, ["store", "junk_food"]),
+                cne("3", "Decathlon", 25.97, 6, ["maintenance", "bicycle"]),
+                cne("4", "Sainsbury's", 50.00, 6, ["fuel", "car"]),
+            ],
+        }
+    },
+    #   NEXT USER
+}
+
+

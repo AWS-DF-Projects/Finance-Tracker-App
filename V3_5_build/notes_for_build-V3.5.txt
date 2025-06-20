@@ -1,0 +1,88 @@
+                              V3.5 Project Folder Structure
+
+0 - Functions
+    - Purpose: Contains reusable functions that help maintain DRY (Don’t Repeat Yourself).
+    These functions can be used across various parts of the project, ensuring that common tasks
+     like data processing or validation don’t need to be rewritten.
+
+    Contents:
+        - Utility functions (e.g., input validation, string formatting, etc.)
+        - Functions for common operations (e.g., calculating averages, handling dates, etc.)
+
+1 - Account
+    - Purpose: This folder contains everything related to managing user accounts.
+     The focus will be on the account management class, which will allow you to create, edit, delete,
+      and interact with user account data.
+
+    Contents:
+        - account.py: Defines the Account class.
+    Functions:
+        - create_account(), edit_account(), delete_account(), etc.
+        - Methods to interact with the SQLite DB (e.g., saving, updating user data).
+    Changes to Class file:
+        - Add fields like id, first name, last name, username, password, and take_home.
+        - Handle user-specific information. These should also interact with the SQLite DB for storage.
+
+2 - Monthly Bills
+    - Purpose: This folder handles all operations related to managing bills (e.g., rent, council tax, utilities).
+     It allows you to create, edit, delete, and query bill data, all while associating each bill with a
+     specific user and year.
+
+    Contents:
+        - bill.py: Contains the Bill class.
+    Functions:
+        - create_bill(), edit_bill(), delete_bill(), etc.
+        - Methods for handling queries related to bills (e.g., getting bills by year, updating amounts, etc.).
+    Changes to Class File:
+        Add id (unique identifier) and year (for tracking when the bill was created).
+        These will ensure the data is linked properly to the user and year.
+         Each bill will also interact with the SQLite DB.
+
+3 - Expenditures
+    - Purpose: This folder manages all aspects of user expenditures (e.g., groceries, entertainment, transportation).
+      The focus is on handling the addition, deletion, and querying of expenditures for each month.
+
+    Contents:
+        - expenditure.py: Contains the Expenditure class.
+    Functions:
+        - create_expenditure(), edit_expenditure(), delete_expenditure(), etc.
+        - Methods for interacting with the SQLite DB (e.g., saving, updating, and deleting expenditures).
+
+    Changes to Class File:
+        - Add id (unique identifier), month, and year to track the expenditures for each specific user over time.
+
+4 - SQLite DB
+    - Purpose: This folder contains the database-related operations. It is responsible for querying statistics,
+    performing operations on the data, and interacting with the SQLite database for various records
+    (users, bills, expenditures).
+
+    Contents:
+        - db.py: This is where the connection to the SQLite database will happen.
+    Functions:
+        - connect(): Connect to the SQLite database.
+        - create_table(): Create tables if they don’t exist yet.
+        - query_db(): Run queries to fetch or modify data.
+        - get_user_stats(), get_bill_summary(), get_expenditure_report(), etc.
+        - Changes to Class File: Implement queries that work with the Account, Bill, and Expenditure classes to ensure that user data, bills, and expenditures can be stored, updated, and retrieved easily.
+
+Additional Notes for V3.5:
+    Database Schema Changes:
+        - You should ensure that the database schema is designed to handle id, year, and any other
+        user-specific data in a way that can scale.
+        - For each user, the tables should have foreign keys to maintain relationships between Account,
+        Bills, and Expenditures.
+    Class Updates:
+        - The Bill and Expenditure classes should be updated to handle user id and year to tie records to a
+        specific user and year.
+        - The Account class will store user-specific details and will be connected to the bills and
+        expenditures using the id.
+    Integrating Functions:
+        - The functions in the 0 - Functions folder should be designed to interact seamlessly with the database.
+         For example, a function that calculates the average bill amount should fetch all bill records for
+         a given year and calculate the average.
+
+Overall Thought Process for V3.5:
+    This structure is designed to keep the project organized while making sure each part of the system is
+    modular and independent, which allows for future expansion and maintenance. By keeping things separated
+    into functional folders (account, bills, expenditures, DB), you can focus on building and testing each
+    module independently and then integrate them into your larger system.

@@ -1,0 +1,45 @@
+accounts = {
+    'df': {
+        "first_name"  : "darren",
+        "last_name"   : "fawcett",
+        "password"    : "1111",
+        "take_home_£" : 2345.00,
+    },
+}
+
+bills = {
+    "df": [
+        {"bill": "rent",        "cost": 570,    "date": 1,  "tags": ["permanent"           ], "active": True},
+        {"bill": "council tax", "cost": 161,    "date": 2,  "tags": ["permanent", "utility"], "active": True},
+        {"bill": "gas & elec",  "cost": 157.12, "date": 5,  "tags": ["permanent", "utility"], "active": True},
+        {"bill": "water",       "cost": 150,    "date": 3,  "tags": ["permanent", "kt"     ], "active": True},
+        {"bill": "kt food",     "cost": 200,    "date": 1,  "tags": ["permanent", "kt"     ], "active": True},
+        {"bill": "car tax",     "cost": 16.62,  "date": 2,  "tags": ["permanent", "car"    ], "active": True},
+        {"bill": "car insure",  "cost": 42.40,  "date": 2,  "tags": ["permanent", "car"    ], "active": True},
+        {"bill": "fuel",        "cost": 50,     "date": 99, "tags": ["permanent", "car"    ], "active": True},
+        {"bill": "tesco mob",   "cost": 113.0,  "date": 16, "tags": ["permanent"           ], "active": True},
+        {"bill": "tv license",  "cost": 15,     "date": 2,  "tags": ["permanent"           ], "active": True},
+        {"bill": "foresters",   "cost": 50.00,  "date": 2,  "tags": ["invest"              ], "active": True},
+        {"bill": "sky tv",      "cost": 46.69,  "date": 10, "tags": ["subscription"        ], "active": True},
+        {"bill": "dentist",     "cost": 15.70,  "date": 9,  "tags": ["subscription"        ], "active": True},
+        {"bill": "youtube",     "cost": 13,     "date": 10, "tags": ["subscription"        ], "active": True},
+        {"bill": "ring sub",    "cost": 7.99,   "date": 10, "tags": ["subscription"        ], "active": True},
+        {"bill": "aws S/B",     "cost": 28,     "date": 16, "tags": ["subscription"        ], "active": False},
+        {"bill": "IVA",         "cost": 279,    "date": 2,  "tags": ["temporary"           ], "active": True},
+        {"bill": "course",      "cost": 250,    "date": 5,  "tags": ["temporary", "loan"   ], "active": True},
+        {"bill": "chiro",       "cost": 70,     "date": 99, "tags": ["temporary", "kt"     ], "active": True},
+    ],
+}
+
+db_1 = [
+        CreateNewBill(1, "rent", 570, 1, ["Permanent"], True),
+        CreateNewBill(2, "council tax", 161, 2, ["Permanent"], True),
+        CreateNewBill(3, "gas & elec", 157.12, 5, ["Permanent"], True),
+        CreateNewBill(4, "water", 150, 3, ["Permanent", "kt"], True),
+    ]
+db_2 = [
+        CreateNewBill(1, "mortgage", 670, 1, ["Permanent"], True),
+        CreateNewBill(2, "council tax", 161, 2, ["Permanent"], True),
+        CreateNewBill(3, "gas & elec", 157.12, 5, ["Permanent"], True),
+        CreateNewBill(4, "water", 150, 3, ["Permanent", "df"], True),
+    ]
